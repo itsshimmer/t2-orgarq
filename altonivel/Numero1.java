@@ -24,8 +24,14 @@ public class Numero1 {
             }
         }
 
-        // Imprime o menor e maior número
+        // Gera a soma e o produto dos dois
+        int soma = menor + maior;
+        int produto = menor * maior;
+
+        // Imprime os resultados
         System.out.println("O menor número é: " + menor);
         System.out.println("O maior número é: " + maior);
+        System.out.println("A soma é: " + soma);
+        System.out.println("O produto é: " + produto);
     }
 }
