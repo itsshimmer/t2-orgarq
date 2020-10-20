@@ -46,7 +46,7 @@ endlaco
     stw r3,soma
     stw r3,0xf002
 
-    xor r1,r1,r1
+    ldi r1,0
 rep
 	slt r3,r1,r6
 	bez r3,end
