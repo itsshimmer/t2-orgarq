@@ -12,7 +12,6 @@ laco
     add r5,r5,r1
 
 	ldw r5,r5
-	stw r5,0xf002
 
     add r1,1
 
@@ -36,15 +35,12 @@ maior
     bnz r7,laco
 endlaco
     ldw r5,menornum
-    stw r5,0xf002
     ldw r6,maiornum
-    stw r6,0xf002
 
     ldi r3,0
     add r3,r3,r5
     add r3,r3,r6
     stw r3,soma
-    stw r3,0xf002
 
     ldi r1,0
 rep
@@ -56,6 +52,12 @@ rep
 	add r1,1
 	bnz r7,rep
 end
+    ldw r1,menornum
+    stw r1,0xf002
+    ldw r1,maiornum
+    stw r1,0xf002
+    ldw r1,soma
+    stw r1,0xf002
     ldw r1,produto
     stw r1,0xf002
 	hcf
