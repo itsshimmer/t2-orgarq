@@ -46,10 +46,22 @@ endlaco
     stw r3,soma
     stw r3,0xf002
 
+    xor r1,r1,r1
+rep
+	slt r3,r1,r6
+	bez r3,end
+	ldw r4,produto
+	add r4,r4,r5
+	stw r4,produto
+	add r1,1
+	bnz r7,rep
+end
+    ldw r1,produto
+    stw r1,0xf002
 	hcf
 
 tam	25
-vet	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+vet	2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
 soma    0
 produto    0
 maiornum    -32767
