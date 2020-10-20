@@ -2,10 +2,10 @@ main
 	ldi r1,0 
 	ldw r2,tam
 
-while
+laco
 	ldi r3,0
 	slt r3,r1,r2
-	bez r3,endwhile
+	bez r3,endlaco
 
 	ldi r5,vet
     add r5,r5,r1
@@ -26,19 +26,26 @@ while
 	slt r3,r4,r5
 	bnz r3,maior
 
-	bnz r7,while
+	bnz r7,laco
 
 menor
     stw r5,menornum
-    bnz r7,while
+    bnz r7,laco
 maior
     stw r5,maiornum
-    bnz r7,while
-endwhile
-    ldw r4,menornum
-    stw r4,0xf002
-    ldw r4,maiornum
-    stw r4,0xf002
+    bnz r7,laco
+endlaco
+    ldw r5,menornum
+    stw r5,0xf002
+    ldw r6,maiornum
+    stw r6,0xf002
+
+    ldi r3,0
+    add r3,r3,r5
+    add r3,r3,r6
+    stw r3,soma
+    stw r3,0xf002
+
 	hcf
 
 tam	25
